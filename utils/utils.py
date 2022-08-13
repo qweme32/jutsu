@@ -6,6 +6,7 @@ from colorama import Fore, Style
 from bs4 import BeautifulSoup
 from time import sleep
 
+import sys
 
 ERROR_CURSOR = Fore.LIGHTRED_EX + "> "
 COLOR_CURSOR = Fore.LIGHTMAGENTA_EX + "> "
@@ -45,7 +46,7 @@ def exit_app(msg = None, code: int = 0, wait=10) -> None:
         print(ERROR_CURSOR + msg + Style.RESET_ALL)
 
     sleep(wait)
-    exit(code)
+    sys.exit(code)
 
 def get_anime_page(text: str) -> BeautifulSoup:
     url = "https://jut.su/qweqweqweqwe"
