@@ -32,7 +32,7 @@ def print_logo():
  | |__| | |_| | |_ ____) | |_| |
   \____/ \__,_|\__|_____/ \__,_|
 """)
-    print(Fore.LIGHTGREEN_EX + "Вставьте ссылку на аниме или его название\n\nПример #1: " + Fore.WHITE + "https://jut.su/mirai-nikki/" + Fore.LIGHTGREEN_EX + "\nПример #2: "+ Fore.WHITE + "Дневник будущего")
+    print(Fore.LIGHTGREEN_EX + "Вставьте ссылку на аниме или его название\n" + Fore.LIGHTBLACK_EX + "Чтобы выйти нажмите CTRL+C" + Fore.LIGHTGREEN_EX +"\n\nПример #1: " + Fore.WHITE + "https://jut.su/mirai-nikki/" + Fore.LIGHTGREEN_EX + "\nПример #2: "+ Fore.WHITE + "Дневник будущего")
     print(Fore.LIGHTBLACK_EX + "\nby " + Fore.LIGHTBLUE_EX + "@qweme32" + Fore.LIGHTBLACK_EX + " with " +  Fore.LIGHTRED_EX + "<3\n" + Style.RESET_ALL)
 
 def new_download_bar(size: int, ep: int) -> Bar:

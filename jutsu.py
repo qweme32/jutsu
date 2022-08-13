@@ -177,4 +177,7 @@ def main(argv) -> int:
 
 
 if __name__ == "__main__":
-    sys.exit(main(sys.argv))
+    try:
+        sys.exit(main(sys.argv))
+    except KeyboardInterrupt:
+        print(colorama.Fore.LIGHTYELLOW_EX + "\n\nBye bye!" + colorama.Style.RESET_ALL)
