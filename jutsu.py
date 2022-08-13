@@ -146,6 +146,7 @@ def main(argv) -> int:
 
         print(colorama.Style.RESET_ALL + "\n\n\nСпасибо что воспользовались моей утилитой, если не сложно поставь звездочку (лайк) на гитхабе\n\nhttps://github.com/qweme32/jutsu")
 
+        sleep(10)
         return 0
 
     else:
@@ -173,6 +174,7 @@ def main(argv) -> int:
 
         print(colorama.Style.RESET_ALL + "\n\n\nСпасибо что воспользовались моей утилитой, если не сложно поставь звездочку (лайк) на гитхабе\n\nhttps://github.com/qweme32/jutsu")
 
+        sleep(10)
         return 0
 
 
