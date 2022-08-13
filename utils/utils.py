@@ -4,6 +4,7 @@ from sys import platform
 from progress.bar import Bar
 from colorama import Fore, Style
 from bs4 import BeautifulSoup
+from time import sleep
 
 
 ERROR_CURSOR = Fore.LIGHTRED_EX + "> "
@@ -39,10 +40,11 @@ def new_download_bar(size: int, ep: int) -> Bar:
     mb_size = round(size/1024/1024, 1)
     return Bar(f"Скачивание (Эпизод: {ep})", max=max_value, suffix="%(percent)d%% (" + str(mb_size) + " MB)")
 
-def exit_app(msg = None, code: int = 0) -> None:
+def exit_app(msg = None, code: int = 0, wait=10) -> None:
     if msg:
         print(ERROR_CURSOR + msg + Style.RESET_ALL)
 
+    sleep(wait)
     exit(code)
 
 def get_anime_page(text: str) -> BeautifulSoup:
@@ -88,7 +90,7 @@ def parse_anime_page(soup: BeautifulSoup) -> dict:
         for anime_link in all_anime_links:
             if anime_link.split("/")[2].startswith("film-"):
                 film = int(anime_link.split("/")[2].replace("film-", "").replace(".html", ""))
-                data["films"][film] = anime_link
+                data["films"][film] = "https://jut.su" + anime_link
 
             elif anime_link.split("/")[2].startswith("season-"):
                 ep = int(anime_link.split("/")[3].replace("episode-", "").replace(".html", ""))
