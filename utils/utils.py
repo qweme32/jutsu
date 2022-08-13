@@ -134,8 +134,8 @@ class AppMetadata:
         self.version = version
         self.timestamp = timestamp
 
-    def compare(self, meta) -> float:
-        return self.version - meta.version
+    def compare(self, meta) -> bool:
+        return self.version > meta.version
 
 
 def check_new_version(app_meta: AppMetadata):
@@ -149,7 +149,7 @@ def check_new_version(app_meta: AppMetadata):
     current_meta = AppMetadata(
         title=res["title"],
         description=res["description"],
-        version=res["timestamp"],
+        version=res["version"],
         timestamp=res["timestamp"]
     )
 

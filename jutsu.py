@@ -19,7 +19,7 @@ import utils
 app_meta = utils.AppMetadata(
     title="First release",
     description="+ Anime download\n+ Anime films download\n+ Simple console UI",
-    version=1.1
+    version=1.1,
     timestamp=1660401492
 )
 
