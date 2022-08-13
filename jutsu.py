@@ -11,6 +11,7 @@
 from ctypes import util
 import os
 import sys
+from time import sleep
 import colorama
 
 import utils
@@ -182,4 +183,5 @@ if __name__ == "__main__":
     except KeyboardInterrupt:
         print(colorama.Fore.LIGHTYELLOW_EX + "\n\nBye bye!" + colorama.Style.RESET_ALL)
 
+    sleep(10)
     sys.exit(0)
