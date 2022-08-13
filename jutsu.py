@@ -8,7 +8,6 @@
 #  Easy download your favorite anime from jut.su
 #  by @qweme32
 
-from ctypes import util
 import os
 import sys
 from time import sleep
