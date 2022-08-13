@@ -8,6 +8,7 @@
 #  Easy download your favorite anime from jut.su
 #  by @qweme32
 
+from ctypes import util
 import os
 import sys
 import colorama
@@ -15,8 +16,20 @@ import colorama
 import utils
 
 
+app_meta = utils.AppMetadata(
+    title="First release",
+    description="+ Anime download\n+ Anime films download\n+ Simple console UI",
+    version=1.1
+    timestamp=1660401492
+)
+
+
 def main(argv) -> int:
     utils.clear_con()
+
+    if utils.check_new_version(app_meta):
+        print(utils.ERROR_CURSOR + "Вышла новая версия программы\n  Скачать можно на https://github.com/qweme32/jutsu")
+
     utils.print_logo()
 
     anime = input(utils.COLOR_CURSOR)

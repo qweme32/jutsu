@@ -126,4 +126,33 @@ def parse_anime_page(soup: BeautifulSoup) -> dict:
 
     return data
 
+
+class AppMetadata:
+    def __init__(self, title: str, description: str, version: float, timestamp: int) -> None:
+        self.title = title
+        self.description = description
+        self.version = version
+        self.timestamp = timestamp
+
+    def compare(self, meta) -> float:
+        return self.version - meta.version
+
+
+def check_new_version(app_meta: AppMetadata):
+    req = session.get("https://raw.githubusercontent.com/qweme32/jutsu/main/meta.json")
+
+    if not req.ok:
+        exit_app("Ошибка подключения к сети!")
+
+    res = req.json()
+
+    current_meta = AppMetadata(
+        title=res["title"],
+        description=res["description"],
+        version=res["timestamp"],
+        timestamp=res["timestamp"]
+    )
+
+    return current_meta.compare(app_meta)
+    
     
